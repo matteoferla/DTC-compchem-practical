@@ -21,6 +21,6 @@ Then with the installed notebook go through the notebooks in order:
 ## TO DO
 
 * Check the pip install via Stats server works
-* pip release fragalysis-api
+* pip release fragalysis-api and optionally use gemmi so it can be used...
 * make a smaller table of fragalysis name | N mols | protein name
 

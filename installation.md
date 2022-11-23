@@ -123,7 +123,7 @@ yes | pip install https://www.stats.ox.ac.uk/~ferla/pyrosetta-2022.46+release.f0
 ```bash
 conda install -c conda-forge trident-chemwidgets
 jupyter labextension install trident-chemwidgets
-yes | pip install Fragmenstein gist-import fragalysis-api rdkit-pypi rdkit-to-params biopython pyrosetta-help michelanglo-api nglview smallworld-api pandas plotly
+yes | pip install Fragmenstein gist-import rdkit-pypi rdkit-to-params biopython pyrosetta-help michelanglo-api nglview smallworld-api pandas plotly
 
 conda clean --tarballs -y
 conda clean --source-cache -y
