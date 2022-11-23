@@ -7,16 +7,16 @@ First and foremost, be aware that there are two drives in your system, one is th
 ### Conda
 We will be using `conda` for our Python. This is a tool that allows one to make a playground where we can install things without being root and if we break it we can start again! This has these three key subcommands:
 
-```bash
 * `conda install`
 * `conda create` — create a virtual environment
 * `conda activate` / `conda deactivate` — turn on a virtual environment
-```
+
 
 ### Jupyter notebooks
 We also will be using Python in a Jupyter notebook. A Jupyter notebook is a web-based way to interact with a Python (or Julia) kernel. Namely, you run the webapp serving on a given port, which you visit in your browser.
 A variant of this is [Colab](https://colab.research.google.com/), which is an offshoot of an early Jupyter notebook and served off Google's cloud infrastructure.
 Vanilla Jupyter has evolved into jupyterlab, which has better features and will be used in this teaching lab.
+For more info about Jupyter see [Jupyter notes](jupyter.md)
 
 ## Installation
 Let's say you have the path of the former as `$WORKINGDIR_PREFIX`:
@@ -125,11 +125,26 @@ yes | pip install https://www.stats.ox.ac.uk/~ferla/pyrosetta-2022.46+release.f0
 ```bash
 conda install -c conda-forge trident-chemwidgets
 jupyter labextension install trident-chemwidgets
-yes | pip install Fragmenstein gist-import
+yes | pip install Fragmenstein gist-import fragalysis-api
+
+conda clean --tarballs -y
+conda clean --source-cache -y
+pip cache purge
 ```
 
+yes pipe is to not press the Any key to say yes (or whatever word you add after it)
+—bonus: in a Dixons shop open the terminal on a demo Mac and troll the shop assistant...
 
-# yes pipe is to not press the Any key to say yes.
-# bonus: in a Dixons shop open the terminal on a demo Mac and troll the shop assistant...
+## Copy the notebooks in this repo
 
-yes | pip install --no-cache-dir distro pyrosetta_help
+```bash
+git clone https://github.com/matteoferla/DTC-compchem-practical.git
+```
+
+## Start Jupyterlab
+
+```bash
+jupyter-lab
+```
+
+Go to [localhost:8888](http://localhost:8888)
