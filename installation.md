@@ -18,7 +18,7 @@ A variant of this is [Colab](https://colab.research.google.com/), which is an of
 Vanilla Jupyter has evolved into jupyterlab, which has better features and will be used in this teaching lab.
 For more info about Jupyter see [Jupyter notes](jupyter.md)
 
-## Installation
+## Installing conda
 Let's say you have the path of the former as `$WORKINGDIR_PREFIX`:
 
 ```bash
@@ -77,7 +77,7 @@ The command `conda` will now be callable and the following environment variable 
  'CONDA_PYTHON_EXE': '/data/xchem-fragalysis/mferla/conda/bin/python',
  'CONDA_DEFAULT_ENV': 'biochem38'}
 
-
+## Creating a virtual environment w/ Jupyter installed
 Now let's make a conda virtual environment.
 
 ```bash
@@ -123,7 +123,7 @@ yes | pip install https://www.stats.ox.ac.uk/~ferla/pyrosetta-2022.46+release.f0
 ```bash
 conda install -c conda-forge trident-chemwidgets
 jupyter labextension install trident-chemwidgets
-yes | pip install Fragmenstein gist-import fragalysis-api
+yes | pip install Fragmenstein gist-import fragalysis-api rdkit-pypi rdkit-to-params biopython pyrosetta-help
 
 conda clean --tarballs -y
 conda clean --source-cache -y
@@ -132,6 +132,11 @@ pip cache purge
 
 yes pipe is to not press the Any key to say yes (or whatever word you add after it)
 —bonus: in a Dixons shop open the terminal on a demo Mac and troll the shop assistant...
+
+Note that if you are using Colab (ie. not following instructions) a different widget using JSME is required:
+```
+!pip install git+https://github.com/matteoferla/JSME_notebook_hack.git
+```
 
 ## Copy the notebooks in this repo
 
