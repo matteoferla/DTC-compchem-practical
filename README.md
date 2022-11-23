@@ -15,8 +15,8 @@ Then in the installed notebook open the first part, [redocking notebook](1-redoc
 
 * [Last year's CompChem practical](https://github.com/FBoyles/DTC_virtual_screening)
 * [Last year's XChem practical](https://github.com/xchem/strucbio_practical)
-* [Colab notebook using Fragmenstein](https://github.com/matteoferla/Fragmenstein/blob/master/colab_fragmenstein.ipynb)
-* [Colab notebook using Fragmenstein]()
+* [Colab notebook using Fragmenstein](https://colab.research.google.com/github/matteoferla/Fragmenstein/blob/master/colab_fragmenstein.ipynb)
+* [Colab notebook using Fragmenstein #2](https://colab.research.google.com/github/matteoferla/Fragmenstein/blob/master/colab_playground.ipynb)
 
 
 ## TO DO
