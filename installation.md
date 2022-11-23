@@ -25,8 +25,6 @@ Let's say you have the path of the former as `$WORKINGDIR_PREFIX`:
 WORKINGDIR_PREFIX='/👾👾👾/👾👾👾'
 ```
 
-
-
 Open the terminal and install conda.
 Change the `$CONDA_ROOT` variable to whatever you want, here the hidden folder `.conda` to be tidy,
 but can be whatever you like.
@@ -143,8 +141,10 @@ git clone https://github.com/matteoferla/DTC-compchem-practical.git
 
 ## Start Jupyterlab
 
+Go to the folder you would want to be root and run:
+
 ```bash
 jupyter-lab
 ```
 
-Go to [localhost:8888](http://localhost:8888)
+Go to [localhost:8888](http://localhost:8888) and open to `1-redocking.ipynb`.
