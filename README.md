@@ -3,13 +3,11 @@ Compchem practical for the University of Oxford Doctoral Training Centre held â€
 
 To start follow the instructions in [Installation page](installation.md).
 
-Then in the installed notebook open the first part, [redocking notebook](1-redocking.ipynb).
+Then with the installed notebook go through the notebooks in order:
 
-
-
-* Pick a target
-* Re-docking
-* Merge, link, expand or create
+* [retrieve_data notebook](1-retrieve_data.ipynb)
+* [redocking notebook](2-redocking.ipynb)
+* [merging notebook](3-merging.ipynb)
 
 ## See Also
 
@@ -17,6 +15,7 @@ Then in the installed notebook open the first part, [redocking notebook](1-redoc
 * [Last year's XChem practical](https://github.com/xchem/strucbio_practical)
 * [Colab notebook using Fragmenstein](https://colab.research.google.com/github/matteoferla/Fragmenstein/blob/master/colab_fragmenstein.ipynb)
 * [Colab notebook using Fragmenstein #2](https://colab.research.google.com/github/matteoferla/Fragmenstein/blob/master/colab_playground.ipynb)
+* [fragalysis-api tutorial notebook](https://github.com/xchem/fragalysis-api/blob/master/Tutorials.ipynb)
 
 
 ## TO DO
