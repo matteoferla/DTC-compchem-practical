@@ -1,4 +1,5 @@
 # Installation
+> this information is no longer valid
 
 ## Overview
 ### Drives
