@@ -17,10 +17,3 @@ Then with the installed notebook go through the notebooks in order:
 * [Colab notebook using Fragmenstein #2](https://colab.research.google.com/github/matteoferla/Fragmenstein/blob/master/colab_playground.ipynb)
 * [fragalysis-api tutorial notebook](https://github.com/xchem/fragalysis-api/blob/master/Tutorials.ipynb)
 
-
-## TO DO
-
-* Check the pip install via Stats server works
-* pip release fragalysis-api and optionally use gemmi so it can be used...
-* make a smaller table of fragalysis name | N mols | protein name
-
