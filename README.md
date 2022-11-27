@@ -1,8 +1,6 @@
 # DTC-compchem-practical
 Compchem practical for the University of Oxford Doctoral Training Centre held —November 2022.
 
-To start follow the instructions in [Installation page](installation.md).
-
 Then with the installed notebook go through the notebooks in order:
 
 ## Notebook overview
