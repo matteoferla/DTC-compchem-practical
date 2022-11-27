@@ -1,6 +1,5 @@
 typing_extensions
 singledispatchmethod
-
 rdkit-pypi
 rdkit-to-params
 biopython
