@@ -1,6 +1,10 @@
 
 ## TO DO
 
+* Complete docking
+* Make a demo docking example
+* Tweak merging —currently it is simply a copy of the notebook from Fragmenstein.
+
 * make a smaller table of fragalysis name | N mols | protein name
 * Fix version of python installed for 3.7?
 * Check the pip install via Stats server works

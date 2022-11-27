@@ -5,9 +5,13 @@ To start follow the instructions in [Installation page](installation.md).
 
 Then with the installed notebook go through the notebooks in order:
 
-* [retrieve_data notebook](1-retrieve_data.ipynb)
-* [redocking notebook](2-redocking.ipynb)
-* [merging notebook](3-merging.ipynb)
+## Notebook overview
+
+There are three notebooks intended to be run in order:
+
+1. Intro to RDKit: [![colab demo](https://img.shields.io/badge/Run_RDKit_intro-f9ab00?logo=googlecolab)](https://colab.research.google.com/github/matteoferla/DTC-compchem-practical/blob/main/1-basics.ipynb) — Overview of RDKit functionality 
+2. Intro to Forcefields & docking: [![colab demo](https://img.shields.io/badge/Run_Docking_intro-f9ab00?logo=googlecolab)](https://colab.research.google.com/github/matteoferla/DTC-compchem-practical/blob/main/2-redocking.ipynb) — Overview of forcefields in PyRosetta and redocking
+3. Merging: [![colab demo](https://img.shields.io/badge/Run_RDKit_intro-f9ab00?logo=googlecolab)](https://colab.research.google.com/github/matteoferla/DTC-compchem-practical/blob/main/3-merging.ipynb) — Expample of merging
 
 ## See Also
 
