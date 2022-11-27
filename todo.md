@@ -1,5 +1,6 @@
+# TO DO
 
-## TO DO
+> This is for "admin use only" and is not intended for public consumption.
 
 * Complete docking
 * Make a demo docking example
