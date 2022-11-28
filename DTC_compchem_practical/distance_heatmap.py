@@ -31,16 +31,18 @@ def calc_distances(mols: pd.Series) -> np.array:
     return np.array([mols.apply(lambda mol2: calc_d(mol, mol2)).tolist() for mol in mols])
 
 
-def calc_distance_heatmap(df) -> go.Figure:
+def calc_distance_heatmap(mols: List[Chem.Mol]) -> go.Figure:
     # all of this stolen from Rachael, who stole it straight from plotly: https://plotly.com/python/dendrogram/
 
     # distance
-    mols = df.ROMol.apply(rdmolops.AddHs)
-    matrix: np.array = calc_distances(mols)
+    mol_series = pd.Series({mol.GetProp('_Name'): mol for mol in mols})
+    dtc.calc_distance_heatmap()
+    hmols = mol_series.apply(rdmolops.AddHs)
+    matrix: np.array = calc_distances(hmols)
 
     # Initialize figure by creating upper dendrogram
     fig = ff.create_dendrogram(matrix, orientation='bottom',
-                               labels=mols.apply(lambda mol: mol.GetProp('_Name')).tolist(), color_threshold=1)
+                               labels=hmols.index.tolist(), color_threshold=1)
     for i in range(len(fig['data'])):
         fig['data'][i]['yaxis'] = 'y2'
 
