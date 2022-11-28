@@ -1,7 +1,7 @@
 # DTC-compchem-practical
-Compchem practical for the University of Oxford Doctoral Training Centre held —November 2022.
-
-Then with the installed notebook go through the notebooks in order:
+Compchem practical for the University of Oxford Doctoral Training Centre held —November 2022,
+focused on [docking](https://en.wikipedia.org/wiki/Docking_(molecular)) 
+and [fragment based drug discovery](https://en.wikipedia.org/wiki/Fragment-based_lead_discovery).
 
 ## Notebook overview
 
