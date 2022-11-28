@@ -11,7 +11,7 @@ from .extra_3D import *
 from .distance_heatmap import calc_distance_heatmap
 from .display_things import display_mols
 from .crypto import encrypt, decrypt
-from extra_ngl import add_neighbors
+from .extra_ngl import add_neighbors
 
 try:
     from .rosetta import *
