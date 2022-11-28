@@ -1,7 +1,8 @@
-__all__ = ['add_mol_in_pose', 'add_mod_cl']
+__all__ = ['add_mol_in_pose', 'add_mod_cl', 'get_pdb_chains']
 
 import pyrosetta
-from typing import Callable
+import pyrosetta_help as ph
+from typing import Callable, Set
 import types
 import os, gzip, re, pathlib, datetime
 import pandas as pd
@@ -11,18 +12,22 @@ from rdkit_to_params import Params
 prc: types.ModuleType = pyrosetta.rosetta.core
 prn: types.ModuleType = pyrosetta.rosetta.numeric
 
+def get_pdb_chains(pose) -> str:
+    return ''.join(dict(pyrosetta.rosetta.core.pose.conf2pdb_chain(pose).items()).values())
 
-def add_mol_in_pose(pose: pyrosetta.Pose, mol: Chem.Mol, name: str='LIG', copy_coordinates: bool=True) -> pyrosetta.Pose:
+def add_mol_in_pose(pose: pyrosetta.Pose, mol: Chem.Mol, name: str='LIG',
+                    copy_coordinates: bool=True,
+                    chain='X') -> pyrosetta.Pose:
     """
     Add a Chem.Mol to the pose, by generating a "topology" for it, which in Rosetta are called "ResidueType"
     """
     docked: pyrosetta.Pose = pose.clone()
-    topo = Params.from_mol(mol, name=name)
+    topo = Params.from_mol(mol)
     rts: prc.chemical.ResidueTypeSet = topo.add_residuetype(docked)
     lig: prc.conformation.Residue = prc.conformation.ResidueFactory.create_residue( rts.name_map( 'LIG' ) )
     # fix the coordinates...
-    if not copy_coordinates:
-        get_pos: Callable[[int, ], Point3D] = lig.GetConformer().GetAtomPosition
+    if copy_coordinates:
+        get_pos: Callable[[int, ], Point3D] = mol.GetConformer().GetAtomPosition
         for i in range(mol.GetNumAtoms()):
             p: Point3D = get_pos(i)
             atom: Chem.Atom = topo.mol.GetAtomWithIdx(i)
@@ -31,6 +36,8 @@ def add_mol_in_pose(pose: pyrosetta.Pose, mol: Chem.Mol, name: str='LIG', copy_c
             lig.set_xyz(lig.atom_index(atomname), xyz)
     # add the ligand to the pose
     docked.append_residue_by_jump(new_rsd=lig, jump_anchor_residue=docked.num_jump()+1)
+    lig_idx = docked.num_residues()
+    docked.pdb_info().set_resinfo(res=lig_idx, chain_id=chain, pdb_res=1)
     return docked
 
 
@@ -58,8 +65,6 @@ def add_mod_cl(pose: pyrosetta.Pose, gasteiger:float, xyz:prn.xyzVector_double_t
     cl_res.set_xyz(1, xyz)
     # add the ligand to the pose
     pose.append_residue_by_jump(new_rsd=cl_res, jump_anchor_residue=pose.num_jump() + 1)
-
-
 
 DumpTrajectoryEnergy = prc.energy_methods.DumpTrajectoryEnergy
 #formerly: DumpTrajectoryEnergy = prc.scoring.util_methods.DumpTrajectoryEnergy
