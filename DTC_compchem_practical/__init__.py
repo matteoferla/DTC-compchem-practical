@@ -10,3 +10,4 @@ from .rosetta import *
 # these have a single func
 from .distance_heatmap import calc_distance_heatmap
 from .display_things import display_mols
+from .crypto import encrypt, decrypt

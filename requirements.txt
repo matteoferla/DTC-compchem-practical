@@ -12,3 +12,4 @@ pandas
 plotly
 py3Dmol
 pygments
+cryptography
