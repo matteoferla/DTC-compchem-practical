@@ -36,7 +36,7 @@ def add_mol_in_pose(pose: pyrosetta.Pose, mol: Chem.Mol, name: str='LIG',
             lig.set_xyz(lig.atom_index(atomname), xyz)
     # add the ligand to the pose
     docked.append_residue_by_jump(new_rsd=lig, jump_anchor_residue=docked.num_jump()+1)
-    lig_idx = docked.num_residues()
+    lig_idx = docked.total_residue()
     docked.pdb_info().set_resinfo(res=lig_idx, chain_id=chain, pdb_res=1)
     return docked
 
