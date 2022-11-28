@@ -11,5 +11,6 @@ smallworld-api
 pandas
 plotly
 py3Dmol
+nglview
 pygments
 cryptography
