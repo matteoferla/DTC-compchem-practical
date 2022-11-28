@@ -13,6 +13,7 @@ There are three notebooks intended to be run in order:
 
 ## See Also
 
+* [Pat Walters's tutorials](https://github.com/PatWalters/practical_cheminformatics_tutorials)
 * [Last year's CompChem practical](https://github.com/FBoyles/DTC_virtual_screening)
 * [Last year's XChem practical](https://github.com/xchem/strucbio_practical)
 * [Colab notebook using Fragmenstein](https://colab.research.google.com/github/matteoferla/Fragmenstein/blob/master/colab_fragmenstein.ipynb)
