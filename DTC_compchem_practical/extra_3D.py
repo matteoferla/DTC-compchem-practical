@@ -1,5 +1,10 @@
 __all__ = ['make_3Dview', 'pose_3Dview', 'stylize']
 
+"""
+This submodule is to use py3Dmol to display molecules in Jupyter notebooks.
+But I prefer NGLView, which does not work well in Colab...
+"""
+
 # import py3Dmol
 # view = py3Dmol.view(js="https://3dmol.org/build/3Dmol.js")
 # view.addModel(Chem.MolToMolBlock(mol2), "mol")
