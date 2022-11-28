@@ -6,7 +6,7 @@ but is broken...
 
 """
 
-from typing import Dict, Tuple
+from typing import Dict, Tuple, List
 import numpy as np
 import pandas as pd
 import plotly.figure_factory as ff
