@@ -36,7 +36,7 @@ def calc_distance_heatmap(mols: List[Chem.Mol]) -> go.Figure:
 
     # distance
     mol_series = pd.Series({mol.GetProp('_Name'): mol for mol in mols})
-    dtc.calc_distance_heatmap()
+    calc_distance_heatmap()
     hmols = mol_series.apply(rdmolops.AddHs)
     matrix: np.array = calc_distances(hmols)
 
