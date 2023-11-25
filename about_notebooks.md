@@ -18,5 +18,3 @@ In this notebook, the imported module `dtc` will have `dtc.show_source(🤖)` wi
 
 The output of the last command will be passed to `IPython.display.display`, which renders them based on the magic method
 `_ipython_display_` or `_repr_html_` etc. and _in extremis_ `__repr__` then `__str__`. Hence why some cells end in `None` herein.
-
-

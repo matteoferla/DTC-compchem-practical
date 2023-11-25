@@ -16,4 +16,12 @@ On Thursday 30 November 2023, there will be the practical on machine learning.
 These notebooks run in Colab. They are intended to be run in order:
 
 * Reading while installing: [theory](theory.md) — Overview of molecular mechanics
-* Intro to RDKit: [![colab demo](https://img.shields.io/badge/Run_RDKit_intro-f9ab00?logo=googlecolab)](https://colab.research.google.com/github/matteoferla/DTC-compchem-practical/blob/main/1-basics.ipynb) — Overview of RDKit functionality
+* Basics: [![colab demo](https://img.shields.io/badge/Run_RDKit_intro-f9ab00?logo=googlecolab)](https://colab.research.google.com/github/matteoferla/DTC-compchem-practical/blob/main/1-basics.ipynb)
+* Docking: [![colab demo](https://img.shields.io/badge/Run_docking-f9ab00?logo=googlecolab)](https://colab.research.google.com/github/matteoferla/DTC-compchem-practical/blob/main/2-docking.ipynb)
+
+
+If you have time, you can also try:
+
+* Fragalysis [![colab demo](https://img.shields.io/badge/Run_fragalysis-f9ab00?logo=googlecolab)](https://colab.research.google.com/github/matteoferla/DTC-compchem-practical/blob/main/888-fragalysis.ipynb)
+* 2022: redocking with Fragmenstein [![colab demo](https://img.shields.io/badge/Run_place-f9ab00?logo=googlecolab)](https://colab.research.google.com/github/matteoferla/DTC-compchem-practical/blob/main/2022-notebooks/2-redocking.ipynb)
+* 2022: merging with Fragmenstein [![colab demo](https://img.shields.io/badge/Run_merging-f9ab00?logo=googlecolab)](https://colab.research.google.com/github/matteoferla/DTC-compchem-practical/blob/main/2022-notebooks/3-merging.ipynb)
