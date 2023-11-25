@@ -12,6 +12,8 @@ from .distance_heatmap import calc_distance_heatmap
 from .display_things import display_mols
 from .crypto import encrypt, decrypt
 from .extra_ngl import add_neighbors
+from .pdb_fixes import fetch, remove_altloc
+from .py3dmol import get_protein_view, get_mols_view
 
 try:
     from .rosetta import *

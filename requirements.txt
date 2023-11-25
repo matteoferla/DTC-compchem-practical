@@ -1,6 +1,6 @@
 typing_extensions
 singledispatchmethod
-rdkit-pypi
+rdkit
 rdkit-to-params
 biopython
 pyrosetta-help
