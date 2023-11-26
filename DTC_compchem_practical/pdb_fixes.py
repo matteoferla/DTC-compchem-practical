@@ -1,4 +1,4 @@
-import requests
+import requests, pkg_resources
 from typing import Callable
 
 
@@ -29,3 +29,6 @@ def fetch(pdb_acc: str) -> str:
     response: requests.Response = requests.get(f'https://files.rcsb.org/download/{pdb_acc}.pdb')
     response.raise_for_status()
     return response.text
+
+def get_data(resource: str) -> str:
+    return pkg_resources.resource_string('DTC_compchem_practical', f'data/{resource}').decode()
