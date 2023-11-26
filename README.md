@@ -17,8 +17,11 @@ These notebooks run in Colab. They are intended to be run in order:
 
 * Reading while installing: [theory](theory.md) — Overview of molecular mechanics
 * Basics: [![colab demo](https://img.shields.io/badge/Run_RDKit_intro-f9ab00?logo=googlecolab)](https://colab.research.google.com/github/matteoferla/DTC-compchem-practical/blob/main/1-basics.ipynb)
-* Docking: [![colab demo](https://img.shields.io/badge/Run_docking-f9ab00?logo=googlecolab)](https://colab.research.google.com/github/matteoferla/DTC-compchem-practical/blob/main/2-docking.ipynb)
+* Molecular mechanics: [![colab demo](https://img.shields.io/badge/Run_MM-f9ab00?logo=googlecolab)](https://colab.research.google.com/github/matteoferla/DTC-compchem-practical/blob/main/2-molecular-mechanics.ipynb)
+* Docking: [![colab demo](https://img.shields.io/badge/Run_docking-f9ab00?logo=googlecolab)](https://colab.research.google.com/github/matteoferla/DTC-compchem-practical/blob/main/3-docking.ipynb)
 
+**Please do not press `Run all`.**
+It utterly defeats the point of the practical.
 
 If you have time, you can also try:
 

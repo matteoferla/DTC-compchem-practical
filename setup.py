@@ -16,15 +16,18 @@ if os.path.exists(os.path.join(this_directory, 'requirements.txt')):
         requirements = [line for line in requirements if line]
 else:
     requirements = []
-
+package_name = 'DTC_compchem_practical'
 setup(
-    name='DTC_compchem_practical',
-    version='0.1',
+    name=package_name,
+    version='0.2',
     description='Practical for the DTC Computational Chemistry course',
     long_description=long_description,
     long_description_content_type='text/markdown',
     python_requires='>=3.6',
     packages=find_packages(),
+    package_data={
+            package_name: ['data/*.mol', 'data/*.pdb', 'data/*.sdf', 'data/*.csv', 'data/*.txt'],
+        },
     include_package_data=True,
     install_requires=requirements,
     #extras_require={},
