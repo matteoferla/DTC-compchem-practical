@@ -1,4 +1,5 @@
 import py3Dmol
+from rdkit import Chem
 def get_protein_view(pdbblock: str, resn: str, chain='A', width=800, height=400) -> py3Dmol.view:
     view = py3Dmol.view(width=width, height=height)
     add_protein(view, pdbblock, resn, chain)

@@ -26,7 +26,7 @@ setup(
     python_requires='>=3.6',
     packages=find_packages(),
     package_data={
-            package_name: ['data/*.mol', 'data/*.pdb', 'data/*.sdf', 'data/*.csv', 'data/*.txt'],
+            package_name: ['data/*.mol', 'data/*.pdb', 'data/*.sdf', 'data/*.csv', 'data/*.txt', 'data/*.mol2'],
         },
     include_package_data=True,
     install_requires=requirements,
