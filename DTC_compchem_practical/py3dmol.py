@@ -20,8 +20,7 @@ def get_mols_view(**color2mols) -> py3Dmol.view:
     return view
 
 def add_mols(view: py3Dmol.view, **color2mols) -> py3Dmol.view:
-    for color, mols in color2mols.items():
-        for mol in mols:
-            view.addModel(Chem.MolToMolBlock(mol), 'mol')
-            view.setStyle({'model': -1}, {'stick': {'colorscheme': color}})
+    for color, mol in color2mols.items():
+        view.addModel(Chem.MolToMolBlock(mol), 'mol')
+        view.setStyle({'model': -1}, {'stick': {'colorscheme': color}})
     return view

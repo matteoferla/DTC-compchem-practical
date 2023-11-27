@@ -19,7 +19,7 @@ else:
 package_name = 'DTC_compchem_practical'
 setup(
     name=package_name,
-    version='0.2',
+    version='0.3',
     description='Practical for the DTC Computational Chemistry course',
     long_description=long_description,
     long_description_content_type='text/markdown',

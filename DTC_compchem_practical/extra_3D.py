@@ -30,9 +30,8 @@ def make_3Dview(template_pdbblock, colormols: Dict[str, List[Chem.Mol]]) -> py3D
     view = py3Dmol.view(js="https://3dmol.org/build/3Dmol.js")
     view.addModel(template_pdbblock, "pdb", stylize('cartoon', 'gainsboro'))
     view.setStyle(dict(hetflag=True), stylize('stick', 'whiteCarbon'))
-    for color, mols in colormols.items():
-        for mol in mols:
-            view.addModel(Chem.MolToMolBlock(mol), "mol", stylize('stick', color))
+    for color, mol in colormols.items():
+        view.addModel(Chem.MolToMolBlock(mol), "mol", stylize('stick', color))
     view.zoomTo(dict(hetflag=True))
     return view
 
