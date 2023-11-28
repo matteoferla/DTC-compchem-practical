@@ -1,4 +1,4 @@
-## Notebook 1
+# Notebook 1
 
 ### Questions in first cell
 
@@ -151,7 +151,6 @@ Cf. GDB-17: 166 billion molecules up to 17 atoms (https://pubs.acs.org/doi/10.10
 
 ### Rotation
 
-
 ```python
 cen: npt.NDArray[np.float64] = get_centroid(mol.GetConformer())
 shift_to_origin: npt.NDArray[np.float64] = create_translation_matrix(*(-cen))
@@ -235,6 +234,119 @@ Translate to origin, rotate, translate back.
 - Validate the predicted poses using experimental data or other computational methods if available.
 
 MCMC-based docking efficiently explores conformational space and can escape local minima. However, its accuracy depends on the scoring function and the specific implementation of the Monte Carlo algorithm.
+
+
+# Notebook 2
+
+Both PDBFile (the IO for PDB files) and Modeller (the builder) have a `.topology` and `.positions` attributes.
+
+> What do they look like and what are they describing? (remember `dir` and `type`)
+
+* `.topology` is a graph of the molecule, with atoms and bonds and chains and residues.
+* `.positions` is a numpy array of the cartesian coordinates of the atoms inside a OpenMM Quantity like a Pint Quantity.
+The latter has a value and a unit. `_value` holds the actual numpy array
+Pint module: https://pint.readthedocs.io/en/stable/
+
+### Picking a forcefield
+
+A page on the web says this `forcefield = mma.ForceField('amber14-all.xml', 'amber14/tip3pfb.xml')`
+
+But we will use this as we will use implicit water: `forcefield = mma.ForceField('amber14-all.xml', 'implicit/gbn2.xml')`
+
+> What is the difference? And why can't use vacuum? I read on Reddit water is an intersubjective construct...
+
+### Differences in Ligand Binding Energy: Vacuum vs. Solvent
+
+The ligand binding energy in vacuum can differ from that in a solvent due to various physical and chemical interactions. These differences are important in understanding biomolecular interactions.
+
+#### Solvent Effects
+
+- **Polarization**: Polar solvents stabilize interactions through hydrogen bonds and other interactions, absent in vacuum.
+- **Dielectric Constant**: The dielectric constant affects electrostatic interactions, which are weaker in high dielectric solvents like water compared to vacuum.
+
+#### Hydrophobic and Hydrophilic Interactions
+
+- **Hydrophobic Effect**: In aqueous solutions, hydrophobic parts of the ligand and protein drive binding by avoiding water, an effect absent in vacuum.
+- **Hydrophilic Interactions**: Favorable interactions with the solvent can influence binding affinity, not present in vacuum.
+
+#### Entropy Considerations
+
+- **Solvent Reorganization**: Changes in solvent organization around the ligand and protein contribute to entropy change upon binding.
+- **Desolvation**: The displacement of solvent molecules from the binding site during ligand binding contributes to the energetics of binding, absent in vacuum.
+
+#### Specific Solvent Interactions
+
+- Solvents can form specific interactions with the ligand or protein, stabilizing certain conformations not present in vacuum.
+
+#### Computational Modeling Considerations
+
+- **Implicit vs. Explicit Solvent Models**: Different modeling approaches can lead to different predictions about binding energies.
+- **Limitations of Vacuum Calculations**: Calculations in vacuum often fail to account for the complex interplay of forces in a physiological environment.
+
+In summary, the interaction with the solvent, screening of electrostatic interactions, conformational changes, 
+and solvation/desolvation energetics are key factors in the difference in binding energy between solvent and vacuum environments.
+
+### Error
+
+> What did we do wrong? Take a guess!
+
+We did not add hydrogens to the protein
+
+### Q
+
+
+> What is this Integrator thing? (cf. http://docs.openmm.org/latest/userguide/theory/04_integrators.html)
+
+An OpenMM Integrator is an algorithm (a symplectic integrator) for integrating a reformulation of Newton's equations of motion.
+Newtonian mechanics -> Lagrangian Mechanics -> Langevin Dynamics.
+Hamiltonian mechanics (via Velvet and LeapFrog) can also be used.
+
+> What are these forces?
+
+
+(cf. http://docs.openmm.org/latest/userguide/theory/02_standard_forces.html and theory page in repo)
+
+> 12,000 kcal/mol is a lot of energy. What is going on?
+
+It was not energy minimised
+
+# Lenard-Jones
+
+> We saw the Lenard-Jones potential. What does it do and look like?
+
+https://en.wikipedia.org/wiki/Lennard-Jones_potential
+Hockey stick. two terms.
+
+Morse has two terms also, but different. Same shape.
+https://en.wikipedia.org/wiki/Morse_potential
+
+> Why is the kinetic energy zero? Even if we _set_ an integrator in Langevin dynamics?
+
+It is at Zero kelvin, local minimum
+
+## Q
+
+> What atom types can you see (cf. https://ambermd.org/antechamber/gaff.html#atomtype or paper for GAFF2)?
+
+Hybridisation state, element symbol, aliphatic or aromatic, apolar or polar, number of hydrogens.
+For aromatic nitrogen in an imidazole (cf. histidine) one is protonated and the other is not.
+
+> Why use atom types instead of element symbols?
+
+Geometry is different for different hybridisation states.
+
+> Does an `aromatic sp2 C` form trans or cis isomers?
+
+For a 6 membered ring, the bond angles are 120 degrees, so the hydrogens are cis.
+Nobody cares about weird annulenes.
+
+> What about `aliphatic sp2 C`? 
+
+Both
+
+> Is the hydrogen - heavy atom bond the same length?
+
+Shorter by 0.1 Å
 
 # Other questions
 
