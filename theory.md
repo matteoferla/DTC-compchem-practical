@@ -1,4 +1,30 @@
-# Theory
+# Drug discovery
+
+In Clayden the chapter on drug discovery _stresses_ the importance of the interdisciplinarity of the field.
+
+* `Organic chemistry` — Making compounds in the lab
+* `Physical chemistry` — Maths theory of chemistry — thermodynamics and kinetics, but not running analysis
+* `Analytical chemistry` — Running analysis of compounds in the lab, e.g. NMR, MS, HPLC etc.
+* `Computational chemistry` — Running analysis of compounds on a computer using thermodynamics
+  * `Molecular mechanics` — Classical mechanics to model molecular systems (atoms = solid spheres)
+  * `Quantum mechanics` — Approximations of the Schrödinger equation to model molecular systems (-> orbitals)
+* `Chemoinformatics` — Big data analysis of compound sets
+  * `De novo design` — Designing compounds from scratch
+  * `Virtual screening` — Screening compound libraries
+  * `QSAR`- Quantitative structure-activity relationship
+* `Biochemistry` - How proteins work
+  * `Protein crystallography` — Determining the 3D structure of proteins
+  * `Assays` - Testing proteins in the lab
+* `Medicinal chemistry` — Designing drugs by eye / magical intuition
+* `Pharmacology` — Testing drugs on cells and animals
+  * `Toxicology` — Testing drugs on cells and animals for toxicity
+  * `Pharmacokinetics` — How drugs move around the body (ADME = absorbition, distribution, metabolism, excretion)
+
+Just because a field is unfamiliar, it does not mean it does not matter.
+There is field snootiness (e.g. chemists vs. biochemists), but it is not helpful.
+So why not learn everything!
+
+# Computational Chemistry Theory
 
 ## Ligand–Protein Binding
 
