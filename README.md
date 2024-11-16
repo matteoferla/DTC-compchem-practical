@@ -14,6 +14,8 @@ Date: 18/11/2024-22/11/2024, Michaelmas 8.
 
 These notebooks run in Colab. They are intended to be run in order during the lab session.
 
+If you have Jupyter installed, you can run them locally.
+
 A GitHub ipynb can be run in Colab by appending
 to https://colab.research.google.com/github
 the following path `<USERNAME>/<REPO>/blob/<BRANCH>/<PATH>.ipynb`.
