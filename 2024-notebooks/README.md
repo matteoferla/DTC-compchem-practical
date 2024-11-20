@@ -35,3 +35,6 @@ It utterly defeats the point of the practical.
 Extra:
 * [00 - Molecular mechanics](https://colab.research.google.com/github/matteoferla/DTC-compchem-practical/blob/main/2024-notebooks/666_molecular_mechanics.ipynb)
 * [00 - Docking](https://colab.research.google.com/github/matteoferla/DTC-compchem-practical/blob/main/2024-notebooks/888_docking.ipynb)
+
+## Resources
+
